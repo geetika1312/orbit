@@ -1,0 +1,81 @@
+/* Ensure smooth font rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Styling for the container of the Earth image */
+.earth-demo {
+    background: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden; /* Hide any overflow content */
+}
+
+/* Pseudo-element for additional styling of .earth-demo */
+.earth-demo:before {
+    background-color: black;
+    background-size: cover;
+    content: ""; /* Empty content */
+    opacity: .5; /* Set opacity */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* Styling for the Earth image container */
+.earth {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+}
+
+/* Styling for the Earth image */
+.earth img {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+
+/* Styling for the container of the Moon image */
+.moon-container {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+}
+
+/* Styling for the Moon image container */
+.moon-container .moon {
+    animation: spin 10s linear infinite; /* Apply spinning animation */
+    background: none;
+    width: 100px;
+    height: 100px;
+    pointer-events: none; /* Ignore pointer events */
+    transform-origin: 50px; /* Set transformation origin */
+}
+
+/* Styling for the Moon image */
+.moon-container img {
+    transform: translateX(-160px) translateY(-160px); /* Position the moon */
+    width: 80px;
+   
+}
+
+/* Apply transition effect to all elements */
+* {
+    transition: all 4s cubic-bezier(0, 1.5, .3, 1);
+}
+
+/* Define keyframes for spinning animation */
+@keyframes spin {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
